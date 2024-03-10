@@ -8,4 +8,4 @@ I will be working with three separate CSV datasets: Forest_Area, Land_Area, and 
 This information will be instrumental in making informed decisions for sustainable forestry practices and overall environmental management.
 
 ## Problem Statment And Questions: 
-![](problem Statment.png)
+![](problemStatment.png) 

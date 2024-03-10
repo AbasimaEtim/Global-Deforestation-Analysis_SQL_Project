@@ -26,9 +26,11 @@ This information will be instrumental in making informed decisions for sustainab
 ## Data Wangling Procedure
 1. ###Creating the Project's Database
 - I created the project's database and named it 'SQL_PROJECT' and ensured the database was selected.
-*CODE USED:* 
-```CREATE DATABASE SQL_PROJECT;
-USE SQL_PROJECT;```
-![](CreatedDatabase.png)
+* CODE USED: * 
+``` CREATE DATABASE SQL_PROJECT;
+    USE SQL_PROJECT; ```
+
+![](Created_database.png)
+----
 
 

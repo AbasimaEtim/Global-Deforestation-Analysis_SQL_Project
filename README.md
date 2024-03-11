@@ -39,6 +39,7 @@ USE SQL_PROJECT;
 2. ### Imported Dataset
 - Three different .csv files named "Forest_Area", "Land_Area", and "Regions" were imported and selected to view the content of the files.
 ![](importing_files.png)
+-----
 ![](view_the_files.png)
 
 

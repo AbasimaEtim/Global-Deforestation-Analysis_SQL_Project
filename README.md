@@ -62,7 +62,8 @@ WHERE FOREST_AREA_SQKM IS  NULL;
 ```
 ![](nulls.png)
 
-- *CODE USED:*
+*CODE USED:*
+
 ```
 SELECT * FROM [dbo].[Land_Area]
 WHERE total_area_sq_mi IS NULL;

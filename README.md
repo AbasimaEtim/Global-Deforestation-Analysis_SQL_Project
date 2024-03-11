@@ -24,7 +24,7 @@ This information will be instrumental in making informed decisions for sustainab
 - COMMON TABLES EXPRESSION (CTE), SUBQUERIES
 
 ## Data Wangling Procedure
-1. ###Creating the Project's Database
+1. ### Creating the Project's Database
 - I created the project's database and named it 'SQL_PROJECT' and ensured the database was selected.
 
 *CODE USED:*
@@ -35,5 +35,10 @@ USE SQL_PROJECT;
 
 ![](Created_database.png)
 ----
+
+2. ### Imported Dataset
+- Three different .csv files named "Forest_Area", "Land_Area", and "Regions" were imported and selected to view the content of the files.
+![](importing_files.png)
+![](view_the_files.png)
 
 

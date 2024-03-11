@@ -51,9 +51,10 @@ SELECT * FROM [dbo].[Region];
 ![](view_the_files.png)
 
 4. ### CHECKING FOR NULL VALUES
-- Checking for NULL values in the forest_area and land_area tables, specifically the numerical columns. 
+- Checking for NULL values in the forest_area and land_area tables
 - In Forest_Area, null values were found in "FOREST_AREA_SQKM"
 - In Land_Area, null values were found in "total_area_sq_mi"
+- IN Region, null values were found in income_group and was replaced with 'Unknown'
 
 *CODE USED:*
 ```
@@ -70,6 +71,44 @@ WHERE total_area_sq_mi IS NULL;
 ```
 ![](land_area_nulls.png)
 
+*CODE USED:*
+```
+SELECT * FROM [dbo].[Region]
+WHERE income_group = 'Null';
+
+UPDATE Region SET income_group =
+CASE  WHEN income_group = 'NULL' THEN 'Unknown'
+ELSE income_group
+END;
+
+SELECT * FROM [dbo].[Region]
+WHERE income_group = 'unknown';
+
+```
+![](Region_Nulls.png)
+
 5. ### REPLACING NULL VALUES
--  I calculated the average forest and land areas and used the average value to replace the NULL values in the columns. I ensured that the code has executed correctly by checking the columns again
--  
+- I calculated the average FOREST_AREA_SQKM for FOREST_AREA and used the average value to replace the NULL values in the column
+- I calculated the average total_area_sq_mi for LAND_AREA and used the average value to replace the NULL values in the column
+- - IN Region, null values were found in income_group and was replaced with 'Unknown' (This is show in no. 4)
+- I ensured that the code has executed correctly by checking the columns again
+
+*CODE USED:*
+```
+UPDATE FOREST_AREA SET FOREST_AREA_SQKM =
+CASE  WHEN FOREST_AREA_SQKM  IS NULL THEN 391051.83952495
+ELSE FOREST_AREA_SQKM
+END;
+```
+
+![](Replaced_Nulls_forest.png)
+
+*CODE USED:*
+```
+UPDATE Land_Area SET total_area_sq_mi =
+CASE  WHEN total_area_sq_mi  IS NULL THEN 457095.353337975
+ELSE total_area_sq_mi
+END;
+```
+
+![](Nulls_from_land_replaced.png)

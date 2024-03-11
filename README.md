@@ -37,9 +37,36 @@ USE SQL_PROJECT;
 ----
 
 2. ### Imported Dataset
-- Three different .csv files named "Forest_Area", "Land_Area", and "Regions" were imported and selected to view the content of the files.
+- Three different .csv files named "Forest_Area", "Land_Area", and "Regions" were imported.
 ![](importing_files.png)
 -----
+3. ### Retrive Data from the Datasets
+*CODE USED:*
+   ```
+SELECT * FROM [dbo].[Forest_Area];
+SELECT * FROM [dbo].[Land_Area];
+SELECT * FROM [dbo].[Region];
+```
 ![](view_the_files.png)
 
+4. ### CHECKING FOR NULL VALUES
+- Checking for NULL values in the forest_area and land_area tables, specifically the numerical columns. 
+- In Forest_Area, null values were found in "FOREST_AREA_SQKM"
+- In Land_Area, null values were found in "total_area_sq_mi"
+*CODE USED:*
+```
+SELECT *FROM [dbo].[Forest_Area]
+WHERE FOREST_AREA_SQKM IS  NULL;
+```
+![](nulls.png)
 
+*CODE USED:*
+```
+SELECT * FROM [dbo].[Land_Area]
+WHERE total_area_sq_mi IS NULL;
+```
+![](land_area_nulls.png)
+
+5. ### REPLACING NULL VALUES
+-  I calculated the average forest and land areas and used the average value to replace the NULL values in the columns. I ensured that the code has executed correctly by checking the columns again
+-  

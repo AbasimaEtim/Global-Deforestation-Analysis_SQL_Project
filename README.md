@@ -247,5 +247,6 @@ ORDER BY largest_forest_areas DESC
 - With the above I was able to answer the project questions asked and also provide insight to possible deforestation projects.
 - Some countries possess a large forest area while others have very little. If we intend to clear the forest areas for infrastructural purposes, this insight can be helpful to know the right perpective and direction.
 
+### *To interact with the project's SQL query, click [here](https://github.com/AbasimaEtim/SQL_Project/blob/main/SQLproject.sql)
 ## The End 😊
 ![](Thanks.png)

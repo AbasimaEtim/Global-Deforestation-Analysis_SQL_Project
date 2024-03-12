@@ -61,7 +61,7 @@ SELECT * FROM [dbo].[Region];
 SELECT *FROM [dbo].[Forest_Area]
 WHERE FOREST_AREA_SQKM IS  NULL;
 ```
-![](nulls.png)
+![](Forest_Area_Nulls.png)
 
 *CODE USED:*
 
@@ -154,8 +154,7 @@ SELECT income_group, Region.country_name, ROUND(total_area_sq_mi, 0)
 - To answer this question, since the column which I will use to calculate average area in square miles (total_area_sq_mi) is in the Land_Area table and the income_group column is in the table Region, I joined the two tables together using a common key "country_code" column which is in both tables
 - I used SELECT, ROUND, AVG, AS, FROM, JOIN, GROUP BY, HAVING, IN, ORDER BY
 - I compared the result with the rest of the income categories which are 'High income', 'Low income', 'Lower middle income'
-- The result shows that the 'upper middle income region' has the higest average area in square miles which is 383326 followed by High income with the value of 187168
-
+- Here, the result shows that the "Upper middle income" group has the highest average area (383,326 sq mi), followed by "High income", "Lower middle income", and "Low income".
 *CODE USED:*
 ```
 SELECT income_group, ROUND(AVG(total_area_sq_mi), 0) AS AVG_total 

@@ -4,7 +4,7 @@
 
 ## Introduction 
 This SQL project tackles global deforestation trends and aims to uncover valuable environmental insights using advanced SQL techniques.
-I will be working with three separate CSV datasets: Forest_Area, Land_Area, and Regions, each containing three relevant columns. By analyzing these datasets through SQL queries, I will be identifying critical patterns and geographical trends in deforestation.
+I will be working with three separate .csv files: Forest_Area, Land_Area, and Regions, each containing three relevant columns. By analyzing these datasets through SQL queries, I will be identifying critical patterns and geographical trends in deforestation.
 This information will be instrumental in making informed decisions for sustainable forestry practices and overall environmental management.
 
 ## Problem Questions: 
@@ -21,7 +21,7 @@ This information will be instrumental in making informed decisions for sustainab
 - NULL, IS NULL, ON
 - AS, JOIN
 - DENSE RANK, OVER, PARTITION BY
-- COMMON TABLES EXPRESSION (CTE), SUBQUERIES
+- COMMON TABLE EXPRESSION (CTE), SUBQUERIES
 
 ## Data Wangling Procedure
 1. ### Creating the Project's Database
@@ -51,7 +51,7 @@ SELECT * FROM [dbo].[Region];
 ![](view_the_files.png)
 
 4. ### CHECKING FOR NULL VALUES
-- Checking for NULL values in the forest_area and land_area tables
+- Checking for NULL values in the forest_area, land_area tables and region
 - In Forest_Area, null values were found in "FOREST_AREA_SQKM"
 - In Land_Area, null values were found in "total_area_sq_mi"
 - In Region, null values were found in income_group and was replaced with 'Unknown'

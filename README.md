@@ -90,7 +90,7 @@ WHERE income_group = 'unknown';
 5. ### REPLACING NULL VALUES
 - I calculated the average FOREST_AREA_SQKM for FOREST_AREA and used the average value to replace the NULL values in the column
 - I calculated the average total_area_sq_mi for LAND_AREA and used the average value to replace the NULL values in the column
-- In Region, null values were found in income_group and was replaced with 'Unknown' (This is show in no. 4)
+- In Region, null values were found in income_group and was replaced with 'Unknown' (This is shown in no. 4)
 - I ensured that the code has executed correctly by checking the columns again
 
 *CODE USED:*
@@ -125,6 +125,7 @@ JOIN Region ON Land_Area.country_code = Region.country_code;
 ### Question 1: What are the total number of countries involved in deforestation?
 - A total number of 219 coutries are involved in the deforestaion
 - I used the DISTINCT and COUNT operators
+
 *CODE USED:*
 ```
 SELECT DISTINCT COUNT(COUNTRY_NAME) no_of_countries 
@@ -155,6 +156,7 @@ SELECT income_group, Region.country_name, ROUND(total_area_sq_mi, 0)
 - I used SELECT, ROUND, AVG, AS, FROM, JOIN, GROUP BY, HAVING, IN, ORDER BY
 - I compared the result with the rest of the income categories which are 'High income', 'Low income', 'Lower middle income'
 - Here, the result shows that the "Upper middle income" group has the highest average area (383,326 sq mi), followed by "High income", "Lower middle income", and "Low income".
+
 *CODE USED:*
 ```
 SELECT income_group, ROUND(AVG(total_area_sq_mi), 0) AS AVG_total 
@@ -188,6 +190,7 @@ HAVING income_group  IN ('Upper middle income','High income', 'Low income', 'Low
 - I used the ROUND, SUM, AS, JOIN, ON, DESC, GROUP BY, ORDER BY, DENSE_RANK, OVER, PARTITION BY
 - I also used aliasing (AS) to make referencing easier
 - The result shows that countries with the highest total forest areas in different regions include: World, Russian Federation, Brazil, Canada, China, Congo, Dem. Rep., India, Qatar, With World being the overal highest.
+
 *CODE USED:*
 
 ```
@@ -212,7 +215,9 @@ ORDER BY total_forest_area_sqkm DESC
 - I used the ROUND, SUM, AS, JOIN, ON, DESC, GROUP BY, ORDER BY, DENSE_RANK, OVER, PARTITION BY, CTE
 - I also used aliasing (AS) to make referencing easier
 - The result shows that countries with the lowest total forest areas in different regions include: Faroe Islands, Malta, Aruba, Tuvalu, Bermuda, Maldives, Mauritius, World With Faroe Islands being the overal lowest.
+
 *CODE USED:*
+
 ```
 WITH FOREST_RANK AS (SELECT Region.country_name, region, ROUND(SUM(forest_area_sqkm), 0) AS TOTAL_FOREST_AREA, 
 	DENSE_RANK() OVER(PARTITION BY region ORDER BY SUM(forest_area_sqkm)) AS LOWEST_FOREST_RANK

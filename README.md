@@ -123,21 +123,20 @@ JOIN Region ON Land_Area.country_code = Region.country_code;
 
 ## Data Analysis and Insights generated
 ### Question 1: What are the total number of countries involved in deforestation?
-- A total number of 219 coutries are involved in the deforestaion
-- I used the DISTINCT and COUNT operators
+- A total number of 176 coutries were involved in deforestaion
+- I descovered that there were cretain countries in the dataset that did nit experience deforestation
 
 *CODE USED:*
 ```
-SELECT DISTINCT COUNT(COUNTRY_NAME) no_of_countries 
-FROM Region;
-SELECT DISTINCT country_name 
-FROM Region;
+SELECT  COUNT(DISTINCT COUNTRY_NAME) no_of_countries_INVOLVED FROM 
+(SELECT country_name, forest_area_sqkm, RANK() OVER(PARTITION BY COUNTRY_NAME ORDER BY forest_area_sqkm )RANK FROM Forest_Area ) RANKCOUNTRIES
+WHERE RANK != 1;
 ```
 
-![](question1.png)
+![](Question1.png)
 
 ### Question 2: Show the income groups of countries having total area ranging from 75,000 to 150,000 square meter?
-- To answer this question, since the income group and total area in square meter column are in two different tables ("Regions" and "Forest_area" tables), I joined the two tables together using a common key "country_code" column which is in both tables
+- To answer this question, since the income group and total area in square meter column are in two different tables ("Regions" and "Land_area" tables), I joined the two tables together using a common key "country_code" column which is in both tables
 - I used SELECT, ROUND, FROM, JOIN, ON, WHERE AND BETWEEN
 - 682 countries's Income groups were shown having total area ranging from 75,000 to 150,000 square meter
 - The income group of these countries range from high income, upper middle income, lower middle income and low income.

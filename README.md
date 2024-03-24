@@ -124,7 +124,6 @@ JOIN Region ON Land_Area.country_code = Region.country_code;
 ## Data Analysis and Insights generated
 ### Question 1: What are the total number of countries involved in deforestation?
 - A total number of 176 coutries were involved in deforestaion
-- I descovered that there were cretain countries in the dataset that did nit experience deforestation
 
 *CODE USED:*
 ```
